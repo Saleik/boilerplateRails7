@@ -2,6 +2,7 @@
   "name": "boilerplate_rails7",
   "description": "importmap/rollup/sass/bootstrap/font-awesome",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "@hotwired/stimulus": "^3.1.0",
     "@hotwired/turbo-rails": "^7.2.0",
@@ -13,7 +14,7 @@
   },
   "scripts": {
     "watch:sass": "sass -w ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build": "yarn watch:sass & rollup -c rollup.config.js"
+    "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build": "yarn build:css & rollup -c rollup.config.js"
   }
 }
